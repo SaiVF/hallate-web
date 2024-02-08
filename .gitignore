@@ -12,3 +12,5 @@ npm-debug.log
 yarn-error.log
 
 mysql-data/
+
+.DS_Store

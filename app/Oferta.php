@@ -3,8 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use DB;
-use Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+// use DB;
+// use Auth;
 
 class Oferta extends Model
 {
@@ -120,7 +123,8 @@ class Oferta extends Model
 
       if ($category) {
         if ($category->svg) {
-          return '<svg id="'.str_slug($category->name).'" data-name="'.str_slug($category->name).'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">'.$category->svg.'</svg>' .'<style>svg#'.str_slug($category->name). ' .cls-1 {fill: '.$category->color_principal.'} </style>';
+        //   return '<svg id="'.str_slug($category->name).'" data-name="'.str_slug($category->name).'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">'.$category->svg.'</svg>' .'<style>svg#'.str_slug($category->name). ' .cls-1 {fill: '.$category->color_principal.'} </style>';
+          return '<svg id="'.Str::slug($category->name).'" data-name="'.Str::slug($category->name).'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">'.$category->svg.'</svg>' .'<style>svg#'.Str::slug($category->name). ' .cls-1 {fill: '.$category->color_principal.'} </style>';
         }else {
           return '<img src="'.url('uploads/'.$category->image).'">';
         }
