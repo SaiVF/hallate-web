@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Http\Presenters\ObraPresenter;
 use McCool\LaravelAutoPresenter\HasPresenter;
 use Carbon\Carbon;
-use DB;
+// use DB;
+use Illuminate\Support\Facades\DB;
 class Obra extends Model implements HasPresenter
 {
   protected $fillable = [

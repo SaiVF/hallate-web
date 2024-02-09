@@ -7,6 +7,7 @@ use App\Http\Presenters\EquipoPresenter;
 use McCool\LaravelAutoPresenter\HasPresenter;
 use Carbon\Carbon;
 
+
 class Equipo extends Model implements HasPresenter
 {
   protected $fillable = [

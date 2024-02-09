@@ -18,7 +18,7 @@ class Post extends Model
     'visits',
     'author'
   ];
-  
+
   public function getPublishedAtAttribute()
   {
     if(!empty($this->attributes['published_at'])) return date('d/m/Y H:i:s', strtotime($this->attributes['published_at']));
@@ -84,7 +84,7 @@ class Post extends Model
   {
     $this->attributes['title'] = trim($value);
   }
-  
+
   public function theDate()
   {
     return date('d/m/Y', strtotime($this->attributes['published_at']));

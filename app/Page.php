@@ -3,7 +3,7 @@
 namespace App;
 
 use Baum\Node;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Http\Presenters\PagePresenter;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -18,11 +18,11 @@ class Page extends Node implements HasPresenter
   	'hidden',
     'attr'
 	];
-	
+
 	public function updateOrder($order, $orderPage)
 	{
 		$orderPage = $this->findOrFail($orderPage);
-		
+
 		if($order == 'before') {
 			$this->moveToLeftOf($orderPage);
 		} else if($order == 'after') {
@@ -31,7 +31,7 @@ class Page extends Node implements HasPresenter
 			$this->makeChildOf($orderPage);
 		}
 	}
-  
+
     public function getPresenterClass()
     {
         return PagePresenter::class;
@@ -42,7 +42,7 @@ class Page extends Node implements HasPresenter
       ['page_id', $this->attributes['id']]
     ])->get();
   }
-	
+
   public function pageFiles() {
     return [];
   }
