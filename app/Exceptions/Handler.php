@@ -52,4 +52,24 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $exception);
     }
+
+
+    // public function render($request, Exception $e)
+    // {
+    //     if ($this->isHttpException($e))
+    //     {
+    //         return $this->renderHttpException($e);
+    //     }
+    //     else
+    //     {
+    //         return parent::render($request, $e);
+    //     }
+    //     /*
+    //     if(strpos($request->path(), 'backend') === false && env('APP_DEBUG') === false) if(!$this->isHttpException($e)) $e = new \Symfony\Component\HttpKernel\Exception\HttpException(500);
+
+    //     return parent::render($request, $e);
+
+
+    //     */
+    // }
 }
