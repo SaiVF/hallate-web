@@ -4,7 +4,9 @@ FROM php:7.4-fpm
 # Instalar dependencias
 RUN apt-get update && apt-get install -y \
     libzip-dev \
-    unzip
+    unzip \
+    libgd-dev && \
+    docker-php-ext-install gd
 
 # Configurar PHP
 RUN docker-php-ext-install pdo_mysql zip
