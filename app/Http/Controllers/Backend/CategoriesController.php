@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Storage;
 class CategoriesController extends Controller
 {
 	protected $categories;
+    protected $types;
 
 	public function __construct(Category $categories)
 	{
 		$this->categories = $categories;
-    $this->types = config('cms.types');
+        $this->types = config('cms.types');
 	}
 
 	public function index($id)

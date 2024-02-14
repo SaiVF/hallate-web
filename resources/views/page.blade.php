@@ -8,6 +8,6 @@
     @if($page->view)
         {!! $page->view->render() !!}
     @else
-        @include('templates.page')
+        @include('templates.home')
     @endif
 @endsection

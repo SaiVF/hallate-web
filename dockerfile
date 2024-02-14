@@ -21,7 +21,8 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Instala las dependencias de Composer
-RUN composer install
+# RUN composer install
+RUN composer install --no-scripts
 
 # Exponer el puerto 8080 para el servidor Laravel (si es necesario)
 EXPOSE 8080

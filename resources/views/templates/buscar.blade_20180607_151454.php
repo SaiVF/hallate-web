@@ -28,7 +28,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            
+
             <h2 class="page-title">@if ($ofertas->total()){{ $ofertas->total() }}@else @endif @if($ofertas->total() > 1 ) resultados @else resultado @endif de búsqueda</h2>
             {{--
             <h2 class="page-title">Más de 750 oportunidades encontradas</h2>
@@ -54,7 +54,7 @@
         </div>
       </div>
       @else
-      
+
       <div class="filter-search">
         {!! Form::open([
           'route' => 'buscar',
@@ -83,7 +83,7 @@
                 <div class="form-group">
                   <select class="form-control temas" name="tema" id="temas" disabled>
                     <option value="sdfsd">Cualquier tema</option>
-                    
+
                   </select>
                 </div>
               </div>
@@ -91,9 +91,9 @@
                 <div class="form-group">
                   <select class="form-control financiamiento" id="financiamiento" name="financiamiento" disabled>
                     <option value="">Cualquier tipo de financiación</option>
-                    
+
                   </select>
-                </div>  
+                </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-group">
@@ -119,7 +119,7 @@
                   </select>
                 </div>
               </div>
-              
+
               <div class="col-lg-4">
                 <div class="form-group">
                   <button class="btn btn-default btn-hallate-default">Explorar</button>
@@ -130,9 +130,9 @@
           {!! Form::close() !!}
         </div>
       </div>
-      
+
       <div class="container">
-        <div class="row adjust">          
+        <div class="row adjust">
           @foreach($ofertas as $oferta)
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" data-inicio="{{ $oferta->fecha_inicio }}" data-limite="{{ $oferta->fecha_limite }}">
             <a href="{{ url('oferta/'.$oferta->id.'/'.str_slug($oferta->title)) }}" class="card-link">
@@ -144,7 +144,7 @@
                   {!! $oferta->theIcon() !!}
                   <p>{{ $oferta->theCategory()->name }}</p>
                   @else
-                  
+
                   @endif
                   @endif
                   </div>
@@ -163,7 +163,7 @@
                       @if($oferta->pais->icon)
                       <img src="{{ url('uploads/'.$oferta->pais->icon) }}" class="icon">
                       @endif
-                      @endif 
+                      @endif
                       {{ $oferta->lugar }} @if($oferta->fecha_limite) - <i class="fa fa-hourglass-half" aria-hidden="true"></i> {{ $oferta->theDate() }} @else - Constante @endif
                     </span>
                   </div>
@@ -235,7 +235,7 @@
         $.post('{{ route('filter.financiamiento') }}', { categoria: $(this).val() }, function(response) {
           $('.financiamiento').html(response).removeAttr('disabled');
         });
-        
+
       })
 
     })

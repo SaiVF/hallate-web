@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        return view('home');
+         // Lógica para obtener las categorías desde el modelo Category
+         $categories = Category::all(); // O utiliza la lógica adecuada para obtener tus categorías
+
+         // Pasa las categorías a la vista 'home'
+         return view('home', compact('categories'));
+        // return view('home');
     }
 }

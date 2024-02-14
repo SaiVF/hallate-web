@@ -59,9 +59,14 @@ class Page extends Node implements HasPresenter
     return $this->hasMany('App\Child', 'parent_id', 'id')->where('type', 1);
   }
 
+//   public function theImage() {
+//     return $this->child()->orderBy('attr', 1)->first() ?: $this->children()->first();
+
+//   }
   public function theImage() {
-    return $this->child()->orderBy('attr', 1)->first() ?: $this->children()->first();
-  }
+    return $this->child()->orderBy('attr', 'asc')->first() ?: $this->children()->first();
+}
+
 
 	public function setTitleAttribute($value)
 	{
